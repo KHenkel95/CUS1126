@@ -3,7 +3,8 @@ public class ArrayCommonElementFinder {
         String[] stringArray1 = {"A", "B", "C", "D", "E"};
         String[] stringArray2 = {"F", "A", "G", "C", "H"};
 
-        System.out.println(ArrCommonElementFinder(stringArray1, stringArray2));
+        System.out.println( "The common elements between the arrays are: "
+                + ArrCommonElementFinder(stringArray1, stringArray2));
     }
     public static String ArrCommonElementFinder(String[] array1, String[] array2){
         StringBuilder a = new StringBuilder();
