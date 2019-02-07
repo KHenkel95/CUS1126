@@ -1,3 +1,7 @@
+/* Author: Ken Henkel
+* Course: CUS1126
+* Date: 2/7/19
+ */
 public class RecursiveSumDigits {
     public static void main (String[] Args){
         System.out.println("The sum is: " + sumDigits(1234));
