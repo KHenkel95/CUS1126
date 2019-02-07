@@ -29,19 +29,17 @@ public class CarArrayList {
         Car maxCar = new Car();
         Car minCar = new Car();
         for (int i = 0; i < carList.size(); i++){
-            if(carList.get(i).getMake().compareTo(make)==0){
-                if(carList.get(i).getModel().compareTo(model)==0){
-                    sum += carList.get(i).getPrice();
-                    counter++;
-                    if(carList.get(i).getPrice() > maxPrice){
-                        maxPrice = carList.get(i).getPrice();
-                        maxCar = carList.get(i);
+            if(carList.get(i).getMake().compareTo(make)==0 && carList.get(i).getModel().compareTo(model)==0){
+                sum += carList.get(i).getPrice();
+                counter++;
+                if(carList.get(i).getPrice() > maxPrice){
+                    maxPrice = carList.get(i).getPrice();
+                    maxCar = carList.get(i);
                     }
-                    if(carList.get(i).getPrice() < minPrice){
-                        minPrice = carList.get(i).getPrice();
-                        minCar = carList.get(i);
+                 if(carList.get(i).getPrice() < minPrice){
+                     minPrice = carList.get(i).getPrice();
+                     minCar = carList.get(i);
                     }
-                }
             }
         }
         System.out.println("The average price for a " + make + " " + model + " is: " + sum/counter + "\nThe " + make + " "
