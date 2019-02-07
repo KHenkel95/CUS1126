@@ -1,3 +1,7 @@
+/* Author: Ken Henkel
+ *  Date: 2/5/19
+ *  Course: CUS1126
+ */
 public class ArrayCommonElementFinder {
     public static void main(String[] args){
         String[] stringArray1 = {"A", "B", "C", "D", "E"};

@@ -1,10 +1,14 @@
+/* Author: Ken Henkel
+ *  Date: 2/5/19
+ *  Course: CUS1126
+ */
 public class Car {
     private String make;
     private String model;
     private String year;
     private double mileage;
     private double price;
-
+    //Constructors
     public Car(String make, String model, String year, double mileage, double price){
         this.make = make;
         this.model = model;

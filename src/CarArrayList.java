@@ -1,21 +1,26 @@
-import java.lang.reflect.Array;
+/* Author: Ken Henkel
+*  Date: 2/5/19
+*  Course: CUS1126
+ */
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class CarArrayList {
     public static void main(String[] args){
-
+        //Declares and initializes an ArrayList with five car objects
         ArrayList<Car> carList = new ArrayList<Car>();
         carList.add(new Car("Dodge", "Ram", "2005", 150000.00, 8000.00));
         carList.add(new Car("Chevrolet", "Corvette", "2019", 100.00, 80900.00));
         carList.add(new Car("Toyota", "Camry", "2015", 35000, 15000.00));
-        carList.add(new Car("GMC", "Sierra HD", "2019", 100.00, 65295.00));
+        carList.add(new Car("Chevrolet", "Corvette", "1968", 80000.00, 25000.00));
         carList.add(new Car("Dodge", "Ram", "2019", 150.00, 40000.00));
 
         System.out.println(carList.toString());
-        getAveragePrice("Dodge", "Ram",carList);
+        getAveragePrice("Dodge", "Ram", carList);
+        getAveragePrice("Chevrolet", "Corvette", carList);
     }
-
+    //Computes and prints the average price for a given make and model, as well as the details for the highest and
+    //lowest priced car
     public static void getAveragePrice(String make, String model, ArrayList<Car> carList){
         double minPrice = 1000000;
         double maxPrice = 0;
@@ -39,8 +44,7 @@ public class CarArrayList {
                 }
             }
         }
-        //return sum/counter;
-        System.out.println("The average price for a "+make+" "+model+" is: " + sum/counter + "\nThe " + make + " "
+        System.out.println("The average price for a " + make + " " + model + " is: " + sum/counter + "\nThe " + make + " "
                 + model + " with the lowest price is: " + minCar.toString() + "\nThe " + make + " "
                 + model + " with the highest price is: " + maxCar.toString());
     }
