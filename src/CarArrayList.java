@@ -10,25 +10,38 @@ public class CarArrayList {
         carList.add(new Car("Chevrolet", "Corvette", "2019", 100.00, 80900.00));
         carList.add(new Car("Toyota", "Camry", "2015", 35000, 15000.00));
         carList.add(new Car("GMC", "Sierra HD", "2019", 100.00, 65295.00));
-        carList.add(new Car("Hyundai", "Sonata", "2008", 200000.00, 3000.00));
+        carList.add(new Car("Dodge", "Ram", "2019", 150.00, 40000.00));
 
         System.out.println(carList.toString());
-        System.out.println(getAveragePrice("Dodge", "Ram",carList));
+        getAveragePrice("Dodge", "Ram",carList);
     }
 
-    public static int getAveragePrice(String make, String model, ArrayList<Car> carList){
-        
-        int sum = 0;
-        int counter = 0;
+    public static void getAveragePrice(String make, String model, ArrayList<Car> carList){
+        double minPrice = 1000000;
+        double maxPrice = 0;
+        double sum = 0;
+        double counter = 0;
+        Car maxCar = new Car();
+        Car minCar = new Car();
         for (int i = 0; i < carList.size(); i++){
             if(carList.get(i).getMake().compareTo(make)==0){
                 if(carList.get(i).getModel().compareTo(model)==0){
                     sum += carList.get(i).getPrice();
                     counter++;
-                    if(carList.get(i).getPrice() > )
+                    if(carList.get(i).getPrice() > maxPrice){
+                        maxPrice = carList.get(i).getPrice();
+                        maxCar = carList.get(i);
+                    }
+                    if(carList.get(i).getPrice() < minPrice){
+                        minPrice = carList.get(i).getPrice();
+                        minCar = carList.get(i);
+                    }
                 }
             }
         }
-        return sum/counter;
+        //return sum/counter;
+        System.out.println("The average price for a "+make+" "+model+" is: " + sum/counter + "\nThe " + make + " "
+                + model + " with the lowest price is: " + minCar.toString() + "\nThe " + make + " "
+                + model + " with the highest price is: " + maxCar.toString());
     }
 }

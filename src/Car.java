@@ -12,6 +12,9 @@ public class Car {
         this.mileage = mileage;
         this.price = price;
     }
+    public Car(){
+
+    }
     //Getters and Setters
     public String getMake(){
         return this.make;
@@ -45,6 +48,6 @@ public class Car {
     }
     @Override
     public String toString(){
-        return "The make, model, year, mileage, and price is : " + make+" "+model+" "+year+" "+mileage+" "+price+"\n";
+        return make+" "+model+" "+year+" "+mileage+" "+price+"\n";
     }
 }
