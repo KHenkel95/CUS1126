@@ -1,3 +1,7 @@
+/* Author: Ken Henkel
+* Course: CUS1126
+* Date: 2/7/19
+ */
 public class RecursiveArraySum {
     public static void main(String[] Args){
         int[] a = {1, 2, 3, 4, 5};
