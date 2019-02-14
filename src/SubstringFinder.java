@@ -6,16 +6,34 @@ import java.util.ArrayList;
 
 public class SubstringFinder {
     public static void main(String[] args){
-        String a = "helo";
-        ArrayList<String> b = new ArrayList<String>();
+        String a = "abc";
+        ArrayList<String> b = new ArrayList<>();
         generateSubstrings(a, b);
-        System.out.println(b);
+        System.out.println("The string to be printed is: " + a);
+        printStringArrayList(b);
+        String c = "Murphy";
+        ArrayList<String> d = new ArrayList<>();
+        generateSubstrings(c, d);
+        System.out.println("The string to be printed is: " + c);
+        printStringArrayList(d);
     }
     public static void generateSubstrings(String str, ArrayList<String> result){
-        for(int y = 0; y < str.length()-1; y++) {
-            for (int i = 1; i < str.length() - 1; i++) {
-                result.add(str.substring(y) + str.substring(i));
+        if (str.isEmpty()){
+            result.add(" ");
+        }
+        else{
+            String subCh = String.valueOf(str.charAt(0));
+            String subStr = str.substring(1);
+            result.add(subCh);
+            generateSubstrings(subStr, result);
+            for(int i = 0; i < subStr.length(); i++){
+                result.add(subCh + subStr.substring(i));
             }
+        }
+    }
+    public static void printStringArrayList(ArrayList<String> stringListToBePrinted){
+        for (String a : stringListToBePrinted){
+            System.out.println(a);
         }
     }
 }
