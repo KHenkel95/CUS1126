@@ -31,78 +31,78 @@ public class SearchPerformanceTest {
     public static void main(String[] args){
         int[] randNumbers1 = new int[10];
         for(int i = 0; i < randNumbers1.length; i++){
-            randNumbers1[i] = (int)(Math.random()*0+9);
+            randNumbers1[i] = i*10;
         }
-        int[] randNumbers2 = new int[20];
+        int[] randNumbers2 = new int[100];
         for(int i = 0; i < randNumbers1.length; i++){
-            randNumbers2[i] = (int)(Math.random()*0+19);
+            randNumbers2[i] = i*10;
         }
-        int[] randNumbers3 = new int[30];
+        int[] randNumbers3 = new int[1000];
         for(int i = 0; i < randNumbers3.length; i++){
-            randNumbers3[i] = (int)(Math.random()*0+29);
+            randNumbers3[i] = i*10;
         }
-        int[] randNumbers4 = new int[40];
+        int[] randNumbers4 = new int[10000];
         for(int i = 0; i < randNumbers4.length; i++){
-            randNumbers4[i] = (int)(Math.random()*0+39);
+            randNumbers4[i] = i*10;
         }
-        int[] randNumbers5 = new int[10];
+        int[] randNumbers5 = new int[100000];
         for(int i = 0; i < randNumbers5.length; i++){
-            randNumbers5[i] = (int)(Math.random()*0+49);
+            randNumbers5[i] = i*10;
         }
-        long start = System.nanoTime();
+        long start1 = System.nanoTime();
         binarySearch(randNumbers1, randNumbers1[randNumbers1.length-1]);
-        long stop = System.nanoTime();
-        long time = stop - start;
-        System.out.println(time);
-        start = System.nanoTime();
+        long stop1 = System.nanoTime();
+        long time1 = stop1 - start1;
+        System.out.println(time1);
+        long start2 = System.nanoTime();
         linearSearch(randNumbers1, randNumbers1[randNumbers1.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
+        long stop2 = System.nanoTime();
+        long time2 = stop2 - start2;
+        System.out.println(time2);
 
-        start = System.nanoTime();
+        long start3 = System.nanoTime();
         binarySearch(randNumbers2, randNumbers2[randNumbers2.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
-        start = System.nanoTime();
+        long stop3 = System.nanoTime();
+        long time3 = stop3 - start3;
+        System.out.println(time3);
+        long start4 = System.nanoTime();
         linearSearch(randNumbers2, randNumbers2[randNumbers2.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
+        long stop4 = System.nanoTime();
+        long time4 = stop4 - start4;
+        System.out.println(time4);
 
-        start = System.nanoTime();
+        long start5 = System.nanoTime();
         binarySearch(randNumbers3, randNumbers3[randNumbers3.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
-        start = System.nanoTime();
+        long stop5 = System.nanoTime();
+        long time5 = stop5 - start5;
+        System.out.println(time5);
+        long start6 = System.nanoTime();
         linearSearch(randNumbers3, randNumbers3[randNumbers3.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
+        long stop6 = System.nanoTime();
+        long time6 = stop6 - start6;
+        System.out.println(time6);
 
-        start = System.nanoTime();
+        long start7 = System.nanoTime();
         binarySearch(randNumbers4, randNumbers4[randNumbers4.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
-        start = System.nanoTime();
+        long stop7 = System.nanoTime();
+        long time7 = stop7 - start7;
+        System.out.println(time7);
+        long start8 = System.nanoTime();
         linearSearch(randNumbers4, randNumbers4[randNumbers4.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
+        long stop8 = System.nanoTime();
+        long time8 = stop8 - start8;
+        System.out.println(time8);
 
-        start = System.nanoTime();
+        long start9 = System.nanoTime();
         binarySearch(randNumbers5, randNumbers5[randNumbers5.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
-        start = System.nanoTime();
+        long stop9 = System.nanoTime();
+        long time9 = stop9 - start9;
+        System.out.println(time9);
+        long start10 = System.nanoTime();
         linearSearch(randNumbers5, randNumbers5[randNumbers5.length-1]);
-        stop = System.nanoTime();
-        time = stop - start;
-        System.out.println(time);
+        long stop10 = System.nanoTime();
+        long time10 = stop10 - start10;
+        System.out.println(time10);
 
     }
 }

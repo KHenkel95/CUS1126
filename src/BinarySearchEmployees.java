@@ -21,16 +21,29 @@ public class BinarySearchEmployees {
         if(iterativeEmployeeBinarySearch(employeeList, 20000) != null ){
             System.out.println("Found a salary matching $20,000: " + iterativeEmployeeBinarySearch(employeeList, 20000));
         }
+        else{
+            System.out.println("Search failed.");
+        }
         System.out.println("Searching for salary: $30,000");
         if(iterativeEmployeeBinarySearch(employeeList, 30000) != null){
             System.out.println("Found a salary matching $30,000: " + iterativeEmployeeBinarySearch(employeeList, 30000));
-        }System.out.println("Searching for salary: $20,000");
+        }
+        else{
+            System.out.println("Search failed.");
+        }
+        System.out.println("Searching for salary: $20,000");
         if(recursiveBinarySearch(employeeList, 0, employeeList.size()-1, 20000) != null){
             System.out.println("Found a salary matching $20,000: " + recursiveBinarySearch(employeeList, 0, employeeList.size()-1, 20000));
+        }
+        else{
+            System.out.println("Search failed.");
         }
         System.out.println("Searching for salary: $30,000");
         if(recursiveBinarySearch(employeeList, 0, employeeList.size()-1, 30000) != null){
             System.out.println("Found a salary matching $30,000: ");
+        }
+        else{
+            System.out.println("Search failed.");
         }
     }
     public static Employee iterativeEmployeeBinarySearch(ArrayList<Employee> employeeArrayList, int targetSalary){
