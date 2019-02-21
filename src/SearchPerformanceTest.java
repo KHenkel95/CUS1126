@@ -1,3 +1,7 @@
+/*Author: Ken Henkel
+ * Course: CUS1126
+ * Date: 2/21/19
+ */
 public class SearchPerformanceTest {
     public static int binarySearch(int[] arr, int target){
         int left = 0;

@@ -1,5 +1,9 @@
+/*Author: Ken Henkel
+* Course: CUS1126
+* Date: 2/21/19
+*/
 import java.util.ArrayList;
-import java.util.Collections;
+
 
 public class BinarySearchEmployees {
     public static void main(String[] args){

@@ -1,3 +1,7 @@
+/*Author: Ken Henkel
+ * Course: CUS1126
+ * Date: 2/21/19
+ */
 public class Employee{
     private String fName;
     private String lName;
