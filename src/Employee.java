@@ -1,4 +1,4 @@
-public class Employee {
+public class Employee{
     private String fName;
     private String lName;
     private int salary;
@@ -28,7 +28,12 @@ public class Employee {
         this.salary = salary;
     }
     @Override
-    public int compareTo(Employee comparableEmployee){
-        int compareSalary = ((Employee)comparableEmployee)
+    public String toString(){
+        return fName + " " + lName + " " + salary;
     }
+    /*@Override
+    public int compareTo(Employee comparableEmployee){
+        int compareSalary = (comparableEmployee).getSalary();
+        return this.salary-compareSalary;
+    }*/
 }
