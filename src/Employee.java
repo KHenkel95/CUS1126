@@ -35,9 +35,4 @@ public class Employee{
     public String toString(){
         return fName + " " + lName + " " + salary;
     }
-    /*@Override
-    public int compareTo(Employee comparableEmployee){
-        int compareSalary = (comparableEmployee).getSalary();
-        return this.salary-compareSalary;
-    }*/
 }

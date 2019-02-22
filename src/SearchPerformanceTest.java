@@ -49,6 +49,7 @@ public class SearchPerformanceTest {
         for(int i = 0; i < randNumbers5.length; i++){
             randNumbers5[i] = i*10;
         }
+        //Start running methods and printing run times
         long start1 = System.nanoTime();
         binarySearch(randNumbers1, randNumbers1[randNumbers1.length-1]);
         long stop1 = System.nanoTime();
