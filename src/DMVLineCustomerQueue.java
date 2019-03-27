@@ -2,7 +2,12 @@ public class CUS1126Lab5{
     public class CUS1126Lab5{
         public static DMVLineCustomer front;
         public static DMVLineCustomer back;
-    
+        
+        public DMVLineCustomerQueue(){
+            front = null;
+            back = null;
+        }
+
         public void enqueue(DMVLineCustomer nodeToInsert){
             if(front == null){
                 front = nodeToInsert;
@@ -13,11 +18,39 @@ public class CUS1126Lab5{
                 back = nodeToInsert;
             }
         }
-        public static void main(String[] args){
+        
+        public void displayQueue(){
+            DMVLineCustomer current = front;
+            if (current == null){
+                System.out.println("Queue is Empty");
+                return;
+            }
+            else{
+                System.out.println("Queue is as follows:");
+                while(current != null){
+                    System.out.print(""+current.fullname + "->");
+                    current = current.link;
+                }
+    
+            }
+        }
+
+        public static void main(String[] Args){
             DMVLineCustomer customer1 = new DMVLineCustomer(1, "Jack Doe", "License Renewal", 50.00);
             DMVLineCustomer customer2 = new DMVLineCustomer(2, "Mary Jane", "Registration Plate collection", 7.20);
             DMVLineCustomer customer3 = new DMVLineCustomer(3, "Killer Joe", "Address Change on License", 20.05);
             DMVLineCustomer customer4 = new DMVLineCustomer(4, "Nikki Semantic", "License renewal", 120.00);
+
+            DMVLINECustomerQueue Queue1 = new DMVLINECustomerQueue();
+            Queu1.enqueue(customer1);
+            Queue1.displayQueue();
+            Queu1.enqueue(customer2);
+            Queue1.displayQueue();
+            Queu1.enqueue(customer3);
+            Queue1.displayQueue();
+            Queu1.enqueue(customer4);
+            Queue1.displayQueue();
+		    
         }
     }
 }
