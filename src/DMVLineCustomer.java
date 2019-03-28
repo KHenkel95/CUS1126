@@ -1,3 +1,8 @@
+/* Author: Ken Henkel
+ * Course: CUS1126
+ * Date: 25 March 2019
+ */
+
 public class DMVLineCustomer{
     int tokenNumber;
     String fullName;
