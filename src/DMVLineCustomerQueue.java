@@ -1,7 +1,14 @@
+/* Author: Ken Henkel
+* Course: CUS1126
+* Date: 25 March 2019
+ */
+
+import java.util.ArrayList;
 public class DMVLineCustomerQueue {
     public static DMVLineCustomer front;
     public static DMVLineCustomer back;
 
+    public static ArrayList<Float> arrTotal = new ArrayList<>();
     public DMVLineCustomerQueue(){
         front = null;
         back = null;
@@ -25,6 +32,7 @@ public class DMVLineCustomerQueue {
         }
         else{
             DMVLineCustomer removed = front;
+            arrTotal.add(removed.payment);
             front = front.next;
             return removed;
         }
@@ -32,7 +40,7 @@ public class DMVLineCustomerQueue {
     public void displayQueue(){
         DMVLineCustomer current = front;
         if (current == null){
-            System.out.println("Queue is Empty");
+            System.out.println("\nQueue is Empty");
             return;
         }
         else{
@@ -44,8 +52,15 @@ public class DMVLineCustomerQueue {
 
         }
     }
+    public static void addTotal(ArrayList<Float> arrTotal){
+        float total = 0f;
+        for(int i = 0; i < arrTotal.size(); i++){
+            total+=arrTotal.get(i);
+        }
+        System.out.println("The total is $" + total);
+    }
 
-    public static float totalCost()
+
     public static void main(String[] Args){
         DMVLineCustomer customer1 = new DMVLineCustomer(1, "Jack Doe", "License Renewal", 50.00f);
         DMVLineCustomer customer2 = new DMVLineCustomer(2, "Mary Jane", "Registration Plate collection", 7.20f);
@@ -67,5 +82,10 @@ public class DMVLineCustomerQueue {
         Queue1.dequeue();
         Queue1.displayQueue();
 
+        Queue1.dequeue();
+        Queue1.displayQueue();
+        Queue1.dequeue();
+        Queue1.displayQueue();
+        addTotal(arrTotal);
     }
 }
