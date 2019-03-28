@@ -18,6 +18,17 @@ public class DMVLineCustomerQueue {
         }
     }
 
+    public DMVLineCustomer dequeue(){
+        if (front == null){
+            System.out.println("Queue is Empty");
+            return null;
+        }
+        else{
+            DMVLineCustomer removed = front;
+            front = front.next;
+            return removed;
+        }
+    }
     public void displayQueue(){
         DMVLineCustomer current = front;
         if (current == null){
@@ -25,15 +36,16 @@ public class DMVLineCustomerQueue {
             return;
         }
         else{
-            System.out.println("Queue is as follows:");
+            System.out.print("\nQueue is as follows:");
             while(current != null){
-                System.out.print(""+current.fullName + "->");
+                System.out.print(" "+current.fullName + "->");
                 current = current.next;
             }
 
         }
     }
 
+    public static float totalCost()
     public static void main(String[] Args){
         DMVLineCustomer customer1 = new DMVLineCustomer(1, "Jack Doe", "License Renewal", 50.00f);
         DMVLineCustomer customer2 = new DMVLineCustomer(2, "Mary Jane", "Registration Plate collection", 7.20f);
@@ -48,6 +60,11 @@ public class DMVLineCustomerQueue {
         Queue1.enqueue(customer3);
         Queue1.displayQueue();
         Queue1.enqueue(customer4);
+        Queue1.displayQueue();
+
+        Queue1.dequeue();
+        Queue1.displayQueue();
+        Queue1.dequeue();
         Queue1.displayQueue();
 
     }
