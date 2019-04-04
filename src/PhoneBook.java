@@ -1,3 +1,7 @@
+/* Author: Ken Henkel
+ * Course: CUS1126
+ * Date: 4/1/2019
+ */
 public class PhoneBook {
     //int tokenNumber;
     String fullName;

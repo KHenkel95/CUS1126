@@ -1,3 +1,7 @@
+/* Author: Ken Henkel
+ * Course: CUS1126
+ * Date: 4/1/2019
+ */
 public class HashTableImplementation {
     public static PhoneBook[] a = new PhoneBook[20];
     public static int hashFunction(String name){
@@ -12,7 +16,7 @@ public class HashTableImplementation {
     }
     public static void insertPhoneNumber(PhoneBook person){
         int index = hashFunction(person.fullName);
-        if (a[index] != null) {
+        if (a[index] != null){
             a[index] = person;
         }
         else{
@@ -33,7 +37,8 @@ public class HashTableImplementation {
     insertPhoneNumber(person3);
     insertPhoneNumber(person4);
     insertPhoneNumber(person5);
-    System.out.println(hashFunction("Jerry Garcia"));
+    int a = hashFunction("Ken Henkel");
+    System.out.println(a);
     System.out.println(hashFunction("Ken Henkel"));
     //System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp(person3.fullName));
     }
