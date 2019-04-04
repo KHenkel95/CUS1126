@@ -2,7 +2,12 @@
  * Course: CUS1126
  * Date: 4/1/2019
  */
+
 public class HashTableImplementation {
+
+    public static PhoneBook head = null;
+    public static PhoneBook tail = null;
+
     public static PhoneBook[] a = new PhoneBook[20];
     public static int hashFunction(String name){
         int nameNumber = 0;
@@ -15,26 +20,32 @@ public class HashTableImplementation {
         return nameNumber % 20;
     }
     public static void insertPhoneNumber(PhoneBook person){
-        while(true) {
-            int index = hashFunction(person.fullName);
-            if (a[index] == null) {
-                a[index] = person;
-            } else {
-                a[index] = person.next;
+        int index = hashFunction(person.fullName);
+        if(a[index] != null) {
+            tail.next = person;
+            tail = person;
+            PhoneBook current = head;
+            while (a[index] != null) {
+                current = current.next;
             }
-            return;
+        }
+        else{
+             head = person;
+             tail = person;
+            //a[index] = person;
         }
     }
     public static String phoneNumberLookUp(String name){
-        while(true) {
-            if (a[hashFunction(name)].fullName.equals(name)) {
-                return a[hashFunction(name)].phoneNumber;
-            } else if (a[hashFunction(name)].next.fullName.equals(name)) {
-                return a[hashFunction(name)].next.phoneNumber;
+        int index = hashFunction(name);
+        if( a[index] != null && a[index].fullName.equals(name)){
+            return a[index].phoneNumber;
+        }
+        else {
+            PhoneBook current = a[index];
+            while(current != null) {
+               current = current.next;
             }
-            else{
-                return "Name not found";
-            }
+            return current.phoneNumber;
         }
     }
     public static void main(String[] args){
@@ -48,6 +59,6 @@ public class HashTableImplementation {
     insertPhoneNumber(person3);
     insertPhoneNumber(person4);
     insertPhoneNumber(person5);
-    System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp(person3.fullName));
+    System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp("Phil Lesh"));
     }
 }
