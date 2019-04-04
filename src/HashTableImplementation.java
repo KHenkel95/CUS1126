@@ -1,8 +1,8 @@
-public class HashTablePhoneLookUp {
+public class HashTableImplementation {
     public static PhoneBook[] a = new PhoneBook[20];
     public static int hashFunction(String name){
         int nameNumber = 0;
-        for(int i = 0; i < name.length(); i++){
+        for(int i = 1; i < name.length(); i++){
             nameNumber+=name.codePointAt(i);
         }
         if(nameNumber > 20){
@@ -33,6 +33,8 @@ public class HashTablePhoneLookUp {
     insertPhoneNumber(person3);
     insertPhoneNumber(person4);
     insertPhoneNumber(person5);
-    System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp(person3.fullName));
+    System.out.println(hashFunction("Jerry Garcia"));
+    System.out.println(hashFunction("Ken Henkel"));
+    //System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp(person3.fullName));
     }
 }
