@@ -15,16 +15,27 @@ public class HashTableImplementation {
         return nameNumber % 20;
     }
     public static void insertPhoneNumber(PhoneBook person){
-        int index = hashFunction(person.fullName);
-        if (a[index] != null){
-            a[index] = person;
-        }
-        else{
-            a[index] = person.next;
+        while(true) {
+            int index = hashFunction(person.fullName);
+            if (a[index] == null) {
+                a[index] = person;
+            } else {
+                a[index] = person.next;
+            }
+            return;
         }
     }
     public static String phoneNumberLookUp(String name){
-        return a[hashFunction(name)].phoneNumber;
+        while(true) {
+            if (a[hashFunction(name)].fullName.equals(name)) {
+                return a[hashFunction(name)].phoneNumber;
+            } else if (a[hashFunction(name)].next.fullName.equals(name)) {
+                return a[hashFunction(name)].next.phoneNumber;
+            }
+            else{
+                return "Name not found";
+            }
+        }
     }
     public static void main(String[] args){
     PhoneBook person1 = new PhoneBook("Jerry Garcia", "5161234567");
@@ -37,9 +48,6 @@ public class HashTableImplementation {
     insertPhoneNumber(person3);
     insertPhoneNumber(person4);
     insertPhoneNumber(person5);
-    int a = hashFunction("Ken Henkel");
-    System.out.println(a);
-    System.out.println(hashFunction("Ken Henkel"));
-    //System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp(person3.fullName));
+    System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp(person3.fullName));
     }
 }
