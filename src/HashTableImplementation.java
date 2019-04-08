@@ -14,10 +14,11 @@ public class HashTableImplementation {
         for(int i = 1; i < name.length(); i++){
             nameNumber+=name.codePointAt(i);
         }
-        if(nameNumber > 20){
-            nameNumber = 20;
+        nameNumber %= 20;
+        if(nameNumber > 19){
+            return 19;
         }
-        return nameNumber % 20;
+        return nameNumber;
     }
     public static void insertPhoneNumber(PhoneBook person){
         int index = hashFunction(person.fullName);
@@ -42,8 +43,11 @@ public class HashTableImplementation {
         }
         else {
             PhoneBook current = a[index];
-            while(current != null) {
+            while(current != null || !current.fullName.equals(name)) {
                current = current.next;
+            }
+            if(current == null){
+                return "This person is not in the phonebook";
             }
             return current.phoneNumber;
         }
