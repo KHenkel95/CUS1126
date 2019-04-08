@@ -25,29 +25,28 @@ public class HashTableImplementation {
         if(a[index] != null) {
             tail.next = person;
             tail = person;
-            PhoneBook current = head;
-            while (a[index] != null) {
-                current = current.next;
-            }
         }
         else{
              head = person;
              tail = person;
-            //a[index] = person;
+             a[index] = person;
         }
     }
     public static String phoneNumberLookUp(String name){
         int index = hashFunction(name);
-        if( a[index] != null && a[index].fullName.equals(name)){
+        if( a[index].fullName.equals(name)){
             return a[index].phoneNumber;
         }
         else {
             PhoneBook current = a[index];
-            while(current != null || !current.fullName.equals(name)) {
-               current = current.next;
+            while(current != null) {
+                if(current.fullName.equals(name)){
+                    return current.phoneNumber;
+                }
+                current = current.next;
             }
             if(current == null){
-                return "This person is not in the phonebook";
+                return " This person is not in the phonebook";
             }
             return current.phoneNumber;
         }
@@ -63,6 +62,6 @@ public class HashTableImplementation {
     insertPhoneNumber(person3);
     insertPhoneNumber(person4);
     insertPhoneNumber(person5);
-    System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp("Phil Lesh"));
+    System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp(person3.fullName));
     }
 }
