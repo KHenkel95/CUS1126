@@ -23,7 +23,10 @@ public class HashTableImplementation {
     public static void insertPhoneNumber(PhoneBook person){
         int index = hashFunction(person.fullName);
         if(a[index] != null) {
-            tail.next = person;
+            while(a[index].next != null){
+                a[index]= a[index].next;
+            }
+            a[index].next = person;
             tail = person;
         }
         else{
@@ -57,11 +60,20 @@ public class HashTableImplementation {
     PhoneBook person3 = new PhoneBook("Phil Lesh", "5165960395");
     PhoneBook person4 = new PhoneBook("Mickey Hart", "5169503945");
     PhoneBook person5 = new PhoneBook("Bill Kreutzmann", "5168594309");
+    PhoneBook person6 = new PhoneBook("Jerry Garcia", "5161234534");
+    PhoneBook person7 = new PhoneBook("Jerry Garcia", "5161234578");
     insertPhoneNumber(person1);
     insertPhoneNumber(person2);
     insertPhoneNumber(person3);
     insertPhoneNumber(person4);
     insertPhoneNumber(person5);
-    System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp(person3.fullName));
+    insertPhoneNumber(person6);
+    insertPhoneNumber(person7);
+    System.out.println("Searching for Phil Lesh :" + phoneNumberLookUp("Phil Lesh"));
+    System.out.println("Searching for Mickey Hart :" + phoneNumberLookUp("Mickey Hart"));
+    System.out.println("Searching for Jerry Garcia :" + phoneNumberLookUp("Jerry Garcia"));
+    System.out.println("Searching for Jerry Garcia :" + phoneNumberLookUp(person6.fullName));
+    System.out.println("Searching for Jerry Garcia :" + phoneNumberLookUp(person7.fullName));
+
     }
 }
